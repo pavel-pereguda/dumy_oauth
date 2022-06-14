@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handing Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p style="color: crimson">You're not authenticated</p>
+<p th:text="'Possible ussue:' + ${submit.errorHandler}"/>
+<a href="/">Submit another message</a>
+</body>
+</html>

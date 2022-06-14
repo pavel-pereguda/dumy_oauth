@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handing Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Completed!</h1>
+
+<p th:text="'creditorIban: ' + ${submit.creditorIban}" />
+<p th:text="'creditorName: ' + ${submit.creditorName}" />
+<p th:text="'amount: ' + ${submit.amount}" />
+<p th:text="'currency: ' + ${submit.currency}" />
+<p th:text="'description: ' + ${submit.description}" />
+
+<a href="/submit">Submit another message</a>
+</body>
+</html>
