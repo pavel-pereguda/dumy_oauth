@@ -1,4 +1,3 @@
-# Simple and dump implementation using Spring boot, Thymeleaf, Retrofit
-# All could be run at http://localhost:8080
-
-
+# Simple oauth check and submission by Spring boot, Thymeleaf, Retrofit
+# http://localhost:8080
+# http://localhost:8080/swagger-ui.html#/
