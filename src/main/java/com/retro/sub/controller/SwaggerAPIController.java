@@ -15,8 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.constraints.NotNull;
@@ -25,6 +25,7 @@ import java.net.URI;
 import static com.retro.sub.config.ConstantStorage.ROOT_API_URL;
 
 @Controller
+@RequestMapping(value = "/")
 public class SwaggerAPIController {
 
     @Value(value = "${client.id}")
@@ -44,13 +45,13 @@ public class SwaggerAPIController {
         return new ResponseEntity<>(headers, HttpStatus.MOVED_PERMANENTLY);
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping()
     public String submitForm(Model model) {
         model.addAttribute("submit", new SubmitDto());
         return "submit";
     }
 
-    @RequestMapping(value = "/submit", method = RequestMethod.POST)
+    @PostMapping(value = "/submit")
     public String executeSubmit(@ModelAttribute SubmitDto submit, Model model) {
         SubmitResponse submitResponse = commonService.processPayment(PaymentDto.builder()
                 .authorization(submit.getToken())
